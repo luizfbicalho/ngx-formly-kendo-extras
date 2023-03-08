@@ -17,4 +17,4 @@ import { FormlyMultiSelectModule } from '@luizfbicalho/ngx-formly-kendo-extras/m
     FormlyMultiSelectModule
   ],
 })
-export class FormlyKendoModule {}
+export class FormlyKendoExtrasModule {}

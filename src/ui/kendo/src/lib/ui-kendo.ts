@@ -1,1 +1,1 @@
-export { FormlyKendoModule } from './ui-kendo.module';
+export { FormlyKendoExtrasModule } from './ui-kendo.module';
