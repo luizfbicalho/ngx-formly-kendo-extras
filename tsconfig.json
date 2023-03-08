@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    // Remaing option for full strict mode
+    "strictNullChecks": false,
+    "noPropertyAccessFromIndexSignature": false,
+
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@ngx-formly/*": ["src/*/src/private_api", "src/*/src/public_api", "src/ui/*/src/public_api"],
+      "@assets/*": ["demo/src/assets/*"]
+    },
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "demo/src/assets/stackblitz/**/*.ts",
+    "demo/src/assets/stackblitz/**/*.ts",
+    "src/schematics/src/*/files/**/*",
+    "cypress.config.ts",
+    "index.ts",
+    "dist/**/*",
+    "cypress/**/*"
+  ],
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
