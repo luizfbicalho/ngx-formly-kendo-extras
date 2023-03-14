@@ -2,13 +2,15 @@ import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
 import { FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FieldType, FormlyFieldProps } from '@ngx-formly/kendo/form-field';
 import { FormlyFieldSelectProps } from '@ngx-formly/core/select';
+import { FormlySelectOption } from './select-options.pipe';
 
 interface ComboBoxProps extends FormlyFieldProps, FormlyFieldSelectProps {
   primitive?: boolean;
   filterable: boolean;
   minFilter: number;
   filterOperator: string;
-  filter: (field: string,operator: string,value: any)=> void;
+  filter: (field: string, operator: string, value: any) => void;
+  mapProp?: ((option: any) => FormlySelectOption | any);
 }
 
 export interface FormlyComboBoxFieldConfig extends FormlyFieldConfig<ComboBoxProps> {
@@ -21,9 +23,9 @@ export interface FormlyComboBoxFieldConfig extends FormlyFieldConfig<ComboBoxPro
     <kendo-combobox
       [formControl]="formControl"
       [formlyAttributes]="field"
-      [data]="props.options | formlySelectOptions : field | async"
-      [textField]="'label'"
-      [valueField]="'value'"
+      [data]="props.options | formlySelectOptionsExtra : field | async"
+      [textField]="props.mapProp ? props.labelProp.toString() : 'label'"
+      [valueField]="props.mapProp  ? props.valueProp.toString() :'value'"
       [valuePrimitive]="props.primitive ?? true"
       [filterable]="props.filterable"
       (filterChange)="handleFilter($event)"

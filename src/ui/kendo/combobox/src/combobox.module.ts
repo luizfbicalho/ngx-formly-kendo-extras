@@ -8,11 +8,13 @@ import { FormlySelectModule as FormlyCoreSelectModule } from '@ngx-formly/core/s
 import { FormlyFieldComboBox } from './combobox.type';
 
 import { FormlyFormFieldModule } from '@ngx-formly/kendo/form-field';
+import { FormlySelectOptionsPipe } from './select-options.pipe';
+
 
 
 
 @NgModule({
-  declarations: [FormlyFieldComboBox],
+  declarations: [FormlyFieldComboBox, FormlySelectOptionsPipe],
   imports: [
 
     CommonModule,

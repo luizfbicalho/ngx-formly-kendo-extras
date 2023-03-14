@@ -7,9 +7,11 @@ import { FormlySelectModule as FormlyCoreSelectModule } from '@ngx-formly/core/s
 
 import { FormlyFieldMultiSelect } from './multiselect.type';
 import { FormlyFormFieldModule } from '@ngx-formly/kendo/form-field';
+import { FormlySelectOptionsPipe } from './select-options.pipe';
+
 
 @NgModule({
-  declarations: [FormlyFieldMultiSelect],
+  declarations: [FormlyFieldMultiSelect, FormlySelectOptionsPipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,
