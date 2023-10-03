@@ -2,12 +2,7 @@ import { execSync, ExecSyncOptions } from 'child_process';
 import * as fs from 'fs';
 import { join } from 'path';
 
-export const PACKAGES = [
-
-  
-  'ngx-formly-kendo-extras'
-
-];
+export const PACKAGES = ['ngx-formly-kendo-extras'];
 
 export function exec(cmd: string, options: ExecSyncOptions = { stdio: 'inherit' }) {
   return execSync(cmd, options);

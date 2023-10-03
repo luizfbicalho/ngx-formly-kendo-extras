@@ -10,13 +10,9 @@ import { FormlyFieldComboBox } from './combobox.type';
 import { FormlyFormFieldModule } from '@ngx-formly/kendo/form-field';
 import { FormlySelectOptionsPipe } from './select-options.pipe';
 
-
-
-
 @NgModule({
   declarations: [FormlyFieldComboBox, FormlySelectOptionsPipe],
   imports: [
-
     CommonModule,
     ReactiveFormsModule,
     DropDownsModule,

@@ -15,7 +15,7 @@ export interface FormlyFieldSelectProps extends FormlyFieldProps {
   labelProp?: string | ((option: any) => string);
   valueProp?: string | ((option: any) => any);
   disabledProp?: string | ((option: any) => boolean);
-  mapProp?: ((option: any) => FormlySelectOption | any);
+  mapProp?: (option: any) => FormlySelectOption | any;
 }
 
 type ITransformOption = {
@@ -23,9 +23,8 @@ type ITransformOption = {
   valueProp: (option: any) => any;
   disabledProp: (option: any) => boolean;
   groupProp: (option: any) => string;
-  mapProp?: ((option: any) => FormlySelectOption | any)
+  mapProp?: (option: any) => FormlySelectOption | any;
 };
-
 
 @Pipe({ name: 'formlySelectOptionsExtra' })
 export class FormlySelectOptionsPipe implements PipeTransform, OnDestroy {
@@ -56,8 +55,7 @@ export class FormlySelectOptionsPipe implements PipeTransform, OnDestroy {
       if (to.mapProp) {
         const mapped = to.mapProp(option);
         opts.push(mapped);
-      }
-      else {
+      } else {
         const o = this.transformOption(option, to);
         if (o.group) {
           const id = groups[o.label];

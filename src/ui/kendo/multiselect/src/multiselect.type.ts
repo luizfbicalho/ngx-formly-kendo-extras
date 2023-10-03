@@ -10,7 +10,7 @@ interface MultiSelectProps extends FormlyFieldProps, FormlyFieldSelectProps {
   minFilter: number;
   filterOperator: string;
   filter: (field: string, operator: string, value: any) => void;
-  mapProp?: ((option: any) => FormlySelectOption | any);
+  mapProp?: (option: any) => FormlySelectOption | any;
 }
 
 export interface FormlySelectFieldConfig extends FormlyFieldConfig<MultiSelectProps> {
@@ -25,7 +25,7 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<MultiSelectPr
       [formlyAttributes]="field"
       [data]="props.options | formlySelectOptionsExtra : field | async"
       [textField]="props.mapProp ? props.labelProp.toString() : 'label'"
-      [valueField]="props.mapProp  ? props.valueProp.toString() :'value'"
+      [valueField]="props.mapProp ? props.valueProp.toString() : 'value'"
       [valuePrimitive]="props.primitive ?? true"
       [filterable]="props.filterable"
       (filterChange)="handleFilter($event)"
@@ -36,14 +36,9 @@ export interface FormlySelectFieldConfig extends FormlyFieldConfig<MultiSelectPr
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormlyFieldMultiSelect extends FieldType<FieldTypeConfig<MultiSelectProps>> {
-
   handleFilter(value: any) {
     if (value.length >= this.props.minFilter) {
-      this.field.props?.filter(
-        "label",
-        this.props.filterOperator,
-        value
-      );
+      this.field.props?.filter('label', this.props.filterOperator, value);
     }
   }
 }

@@ -27,9 +27,7 @@ export class KendoTreeGridComponent extends FieldArrayType {
     return this.model.filter((x: any) => x[this.props.parentIdField] == 0);
   }
   public fetchChildren = (item: any): any[] => {
-    return this.model.filter(
-      (x: any) => x[this.props.parentIdField] == item[this.props.idField]
-    );
+    return this.model.filter((x: any) => x[this.props.parentIdField] == item[this.props.idField]);
   };
 
   public hasChildren = (item: any): boolean => {
@@ -78,19 +76,11 @@ export class KendoTreeGridComponent extends FieldArrayType {
 
   public cancelHandler({ sender, dataItem, isNew }: CancelEvent): void {
     // Close the editor for the given row
-    this.formControl.controls[this.getRowIndex(dataItem)].reset(
-      this.editedItem
-    );
+    this.formControl.controls[this.getRowIndex(dataItem)].reset(this.editedItem);
     this.closeEditor(sender, dataItem, isNew);
   }
 
-  public saveHandler({
-    sender,
-    dataItem,
-    parent,
-    formGroup,
-    isNew,
-  }: SaveEvent): void {
+  public saveHandler({ sender, dataItem, parent, formGroup, isNew }: SaveEvent): void {
     // Collect the current state of the form.
     // The `formGroup` argument is the same as was provided when calling `editRow`.
     const employee: any = formGroup.value;
@@ -120,11 +110,7 @@ export class KendoTreeGridComponent extends FieldArrayType {
     }
   }
 
-  private closeEditor(
-    treelist: TreeListComponent,
-    dataItem: any = this.editedItem,
-    isNew = false
-  ): void {
+  private closeEditor(treelist: TreeListComponent, dataItem: any = this.editedItem, isNew = false): void {
     treelist.closeRow(dataItem, isNew);
     this.editedItem = undefined;
   }

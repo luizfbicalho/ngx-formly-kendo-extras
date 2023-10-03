@@ -10,7 +10,7 @@ interface ComboBoxProps extends FormlyFieldProps, FormlyFieldSelectProps {
   minFilter: number;
   filterOperator: string;
   filter: (field: string, operator: string, value: any) => void;
-  mapProp?: ((option: any) => FormlySelectOption | any);
+  mapProp?: (option: any) => FormlySelectOption | any;
 }
 
 export interface FormlyComboBoxFieldConfig extends FormlyFieldConfig<ComboBoxProps> {
@@ -25,7 +25,7 @@ export interface FormlyComboBoxFieldConfig extends FormlyFieldConfig<ComboBoxPro
       [formlyAttributes]="field"
       [data]="props.options | formlySelectOptionsExtra : field | async"
       [textField]="props.mapProp ? props.labelProp.toString() : 'label'"
-      [valueField]="props.mapProp  ? props.valueProp.toString() :'value'"
+      [valueField]="props.mapProp ? props.valueProp.toString() : 'value'"
       [valuePrimitive]="props.primitive ?? true"
       [filterable]="props.filterable"
       (filterChange)="handleFilter($event)"
@@ -36,14 +36,9 @@ export interface FormlyComboBoxFieldConfig extends FormlyFieldConfig<ComboBoxPro
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormlyFieldComboBox extends FieldType<FieldTypeConfig<ComboBoxProps>> {
-
   handleFilter(value: any) {
     if (value.length >= this.props.minFilter) {
-      this.field.props?.filter(
-        "label",
-        this.props.filterOperator,
-        value
-      );
+      this.field.props?.filter('label', this.props.filterOperator, value);
     }
   }
 }

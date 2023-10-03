@@ -11,12 +11,7 @@ import { GridFieldGroupPipe } from './grid.fieldgroup.pipe';
 import { GridKeyPipe } from './grid.key.pipe';
 
 @NgModule({
-  declarations: [
-    KendoGridComponent,
-    GridDisplayPipe,
-    GridFieldGroupPipe,
-    GridKeyPipe,
-  ],
+  declarations: [KendoGridComponent, GridDisplayPipe, GridFieldGroupPipe, GridKeyPipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,

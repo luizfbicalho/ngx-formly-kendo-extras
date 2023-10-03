@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 
-
-
 import { FormlyGridModule } from '@luizfbicalho/ngx-formly-kendo-extras/grid';
 import { FormlyTreeGridModule } from '@luizfbicalho/ngx-formly-kendo-extras/treegrid';
 import { FormlyComboBoxModule } from '@luizfbicalho/ngx-formly-kendo-extras/combobox';
@@ -14,7 +12,7 @@ import { FormlyMultiSelectModule } from '@luizfbicalho/ngx-formly-kendo-extras/m
     FormlyTreeGridModule,
     FormlyComboBoxModule,
     FormlyHtmlEditorModule,
-    FormlyMultiSelectModule
+    FormlyMultiSelectModule,
   ],
 })
 export class FormlyKendoExtrasModule {}

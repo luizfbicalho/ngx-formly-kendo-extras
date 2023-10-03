@@ -9,7 +9,6 @@ import { FormlyFieldMultiSelect } from './multiselect.type';
 import { FormlyFormFieldModule } from '@ngx-formly/kendo/form-field';
 import { FormlySelectOptionsPipe } from './select-options.pipe';
 
-
 @NgModule({
   declarations: [FormlyFieldMultiSelect, FormlySelectOptionsPipe],
   imports: [

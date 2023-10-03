@@ -11,11 +11,7 @@ import { TreeGridFieldGroupPipe } from './treegrid.fieldgroup.pipe';
 import { TreeGridKeyPipe } from './treegrid.key.pipe';
 
 @NgModule({
-  declarations: [
-    KendoTreeGridComponent,
-    TreeGridFieldGroupPipe,
-    TreeGridKeyPipe,
-  ],
+  declarations: [KendoTreeGridComponent, TreeGridFieldGroupPipe, TreeGridKeyPipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,

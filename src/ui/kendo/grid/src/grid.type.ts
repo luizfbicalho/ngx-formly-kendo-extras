@@ -61,11 +61,7 @@ export class KendoGridComponent extends FieldArrayType {
       this.add(null, {});
     }
   }
-  override add(
-    i?: number,
-    initialModel?: any,
-    { markAsDirty } = { markAsDirty: true }
-  ) {
+  override add(i?: number, initialModel?: any, { markAsDirty } = { markAsDirty: true }) {
     super.add(i, initialModel, { markAsDirty });
     this.editAllRows();
   }
@@ -82,9 +78,7 @@ export class KendoGridComponent extends FieldArrayType {
     while (this.formControl.length > 0) {
       super.remove(0, { markAsDirty: false });
     }
-    this.originalDados.forEach((a) =>
-      this.add(null, a, { markAsDirty: false })
-    );
+    this.originalDados.forEach((a) => this.add(null, a, { markAsDirty: false }));
     this.formControl.disable();
     this.closeAllRows();
   }

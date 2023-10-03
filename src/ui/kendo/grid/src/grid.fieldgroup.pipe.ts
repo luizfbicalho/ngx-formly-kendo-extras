@@ -7,7 +7,7 @@ import { isFormlyFieldConfig } from './form.array.util';
   pure: false,
 })
 export class GridFieldGroupPipe implements PipeTransform {
-  transform(value: FormlyFieldConfig): FormlyFieldConfig[] |undefined{
+  transform(value: FormlyFieldConfig): FormlyFieldConfig[] | undefined {
     if (value.fieldArray) {
       if (isFormlyFieldConfig(value.fieldArray)) {
         return value.fieldArray.fieldGroup;

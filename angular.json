@@ -213,8 +213,6 @@
       }
     },
 
-
-
     "@luizfbicalho/ngx-formly-kendo-extras": {
       "root": "src/ui/kendo",
       "sourceRoot": "src/ui/kendo/src",
